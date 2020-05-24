@@ -202,7 +202,7 @@
     <!-- this property makes sure NetBeans 6.8+ picks up some formatting rules from checkstyle -->
     <netbeans.checkstyle.format>true</netbeans.checkstyle.format>
     <maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
-    <maven-changes-plugin.version>2.11</maven-changes-plugin.version>
+    <maven-changes-plugin.version>2.12.1</maven-changes-plugin.version>
     <localCheckout>true</localCheckout>
     <!-- Need to stay on 3.0.0 until https://issues.apache.org/jira/browse/MSHARED-854 is fixed -->
     <maven-checkstyle-plugin.version>3.0.0</maven-checkstyle-plugin.version>
@@ -612,9 +612,12 @@
               </reportSet>
             </reportSets>
             <configuration>
+              <githubAPIServerId>github</githubAPIServerId>
+              <githubAPIScheme>https</githubAPIScheme>
               <includeOpenIssues>false</includeOpenIssues>
               <onlyMilestoneIssues>true</onlyMilestoneIssues>
               <runOnlyAtExecutionRoot>true</runOnlyAtExecutionRoot>
+              <onlyCurrentVersion>false</onlyCurrentVersion>
             </configuration>
           </plugin>
         </plugins>
