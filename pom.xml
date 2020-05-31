@@ -394,6 +394,10 @@
             <pubScmUrl>${project.scm.developerConnection}</pubScmUrl>
             <scmBranch>gh-pages</scmBranch>
             <content>${project.reporting.outputDirectory}</content><!-- mono-module doesn't require site:stage -->
+            <!--
+             ! Ignore the snapshot path.
+            -->
+            <ignorePathsToDelete>snapshot</ignorePathsToDelete>
           </configuration>
           <executions>
             <execution>
@@ -575,18 +579,6 @@
   </reporting>
 
   <profiles>
-    <profile>
-      <!--
-      On travis-ci, the API rate limit for github reports is sometimes exceeded,
-      so only render this when not run on travis.
-      -->
-      <id>mojo-enable-githubreport-when-not-on-travis</id>
-      <activation>
-        <property>
-          <name>!env.CONTINUOUS_INTEGRATION</name>
-        </property>
-      </activation>
-    </profile>
     <profile>
       <id>mojo-release</id>
       <build>
